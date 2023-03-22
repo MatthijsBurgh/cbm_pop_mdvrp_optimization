@@ -18,7 +18,7 @@ import numpy as np
 import rospy
 from cbm_pop_mdvrp.msg import BestSolution, WeightMatrix
 from std_msgs.msg import Empty, String
-from cbm_pop_lib.aux import my_logger
+from cbm_pop_lib.auxiliary import my_logger
 
 
 class CBMPopAlgorithm:

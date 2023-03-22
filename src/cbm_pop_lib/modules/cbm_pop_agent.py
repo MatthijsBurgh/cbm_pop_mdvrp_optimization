@@ -14,7 +14,7 @@ from cbm_pop_lib.modules.cbm_pop_algorithm import CBMPopAlgorithm
 from cbm_pop_lib.common.mdvrp import MDVRP
 from math import sqrt
 from abc import abstractmethod
-from cbm_pop_lib.aux import my_logger
+from cbm_pop_lib.auxiliary import my_logger
 
 
 import os

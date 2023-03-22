@@ -12,7 +12,7 @@ import random
 import rospy
 
 from cbm_pop_lib.operators.auxiliary_functions import find_node_route
-from cbm_pop_lib.aux import my_logger
+from cbm_pop_lib.auxiliary import my_logger
 from cbm_pop_lib.common import cbm_alg_properties as prop
 
 # Logger setup
