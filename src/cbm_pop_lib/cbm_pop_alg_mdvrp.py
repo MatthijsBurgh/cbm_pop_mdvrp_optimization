@@ -2,7 +2,6 @@
 __author__ = 'barbanas'
 
 from cbm_pop_lib.modules.cbm_pop_algorithm import CBMPopAlgorithm
-from cbm_pop_lib.aux import my_logger
 import cbm_pop_lib.operators.genetic_operators as op
 import cbm_pop_lib.operators.auxiliary_functions as aux
 
