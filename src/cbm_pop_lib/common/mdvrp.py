@@ -198,8 +198,8 @@ class MDVRP(object):
 
         try:
             c = nx.find_cycle(self.precedence_graph)
-            print c
-            print "cycle!!"
+            print(c)
+            print("cycle!!")
         except:
             pass
 

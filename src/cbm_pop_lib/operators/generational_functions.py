@@ -93,19 +93,19 @@ def greedy_insertion(mdvrp, problem_params):
             del ord_tasks[0]
             try:
                 c = nx.find_cycle(result.all_constraints)
-                print c
-                # print self.population[-1].routes
-                raw_input("cycle")
+                print(c)
+                # print(self.population[-1].routes)
+                input("cycle")
             except nx.exception.NetworkXUnfeasible:
                 pass
         else:
             x = ord_tasks.pop(0)
             if len(ord_tasks) == 0 or check_recursion > len(all_tasks):
-                print result.routes
-                print "couldn't do it ........ {}".format(x)
-                print mdvrp.precedence_graph.predecessors(x)
-                print check_recursion
-                raw_input()
+                print(result.routes)
+                print("couldn't do it ........ {}".format(x))
+                print(mdvrp.precedence_graph.predecessors(x))
+                print(check_recursion)
+                input()
                 ord_tasks = deepcopy(all_tasks)
                 random.shuffle(ord_tasks)
                 result = init_result(all_tasks, mdvrp, prec)

@@ -283,15 +283,15 @@ class Chromosome(object):
             n = self.prec_matrix_indices[node]
             if node not in self.unserved_customers:
                 if self.est_matrix[n] - self.start_times[node] > 0.1:
-                    # print [n, node, self.est_matrix[n], self.start_times[node]]
-                    # print self.unserved_customers
-                    # print self.routes
-                    # print self.all_customers
-                    # print ".."
+                    # print([n, node, self.est_matrix[n], self.start_times[node]])
+                    # print(self.unserved_customers)
+                    # print(self.routes)
+                    # print(self.all_customers)
+                    # print("..")
                     return False
                 if self.lft_matrix[n] > 0:
                     if self.end_times[node] - self.lft_matrix[n] > 0.1:
-                        print [node, self.end_times[node], self.lft_matrix[n]]
+                        print([node, self.end_times[node], self.lft_matrix[n]])
                         return False
         return True
 
@@ -575,7 +575,7 @@ class Chromosome(object):
                                 vehicle, r, removal_index, quality[vehicle],
                                 duration, setup_time, demand[vehicle],
                                 setup_cost[vehicle]):
-                            #print "couldn't remove node {}".format(node)
+                            #print("couldn't remove node {}".format(node))
                             return [False, p_old]
                         last_removed = node
                         break
@@ -614,7 +614,7 @@ class Chromosome(object):
                           setup_cost[node][next_node])
 
         if self.capacity[vehicle] - cost_diff < 0.1:
-            #print "can't rem"
+            #print("can't rem")
             return False
 
         self.total_quality -= quality[node]
@@ -816,11 +816,11 @@ class Chromosome(object):
 
         for vehicle in self.routes.keys():
             if self.capacity[vehicle] - demand[vehicle][node] <= 0:
-                print "no cap {}".format(vehicle)
-                print self.capacity[vehicle]
-                print demand[vehicle][node]
-                print demand[vehicle]
-                print node
+                print("no cap {}".format(vehicle))
+                print(self.capacity[vehicle])
+                print(demand[vehicle][node])
+                print(demand[vehicle])
+                print(node)
                 return False
             [min_cost_, ins_time_, ins_cost_, makespan_, min_index_] = self.calc_min_insertion_cost(
                 node, vehicle, duration[vehicle], setup_time[vehicle],

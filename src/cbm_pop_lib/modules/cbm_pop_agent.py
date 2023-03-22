@@ -118,7 +118,7 @@ class CBMPopAgent(object):
         self.status_update(self.agent_names, "ready")
         while self.status != "ready":
             rospy.sleep(0.2)
-            print ". "
+            print(". ")
 
         self.merge_mdvrp()
 
@@ -127,7 +127,7 @@ class CBMPopAgent(object):
         self.status_update(self.agent_names, "configured")
         while self.status != "configured":
             rospy.sleep(0.2)
-            print ".."
+            print("..")
 
         if self.mdvrp is not None:
             start = rospy.get_time()
@@ -156,7 +156,7 @@ class CBMPopAgent(object):
     def share_mdvrp(self):
 
         for name in self.agent_names:
-            print self.agent_names
+            print(self.agent_names)
             mdvrp = self.mdvrp_dict[name]
             tmp = mdvrp.setup_duration_matrix[0]
             tmp = np.reshape(tmp, (tmp.size))
@@ -247,8 +247,8 @@ class CBMPopAgent(object):
     def merge_mdvrp(self):
         agents = self.mdvrp_dict.keys()
         agents.sort()
-        print agents
-        print "..."
+        print(agents)
+        print("...")
         all_tasks = self.mdvrp_dict[self.agent_names[0]].customer_labels
         self.mdvrp = MDVRP(1, len(all_tasks), len(agents))
         for i in range(len(agents)):

@@ -30,7 +30,7 @@ def calc_route_len(solution, mdvrp):
                 duration += mdvrp.setup_duration_matrix[vehicle][route[i]][0]
 
     return [duration, route_demand]
-    print duration
+    print(duration)
 
 
 def load_solution_cordeau(filepath, mdvrp):

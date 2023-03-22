@@ -44,17 +44,17 @@ def crossover_bcrc(vehicle_candidates, p1, p2, quality, duration,
     diff2 = set(p2.all_customers) - set(p1.all_customers)
     # check for decomposition compatibility
     if len(diff1) + len(diff2) > 0:
-        print "not compatible"
+        print("not compatible")
         return [p1, p2]
 
     # remove nodes in r2 from o1 and nodes in r1 from o2
     [succ, _] = o1.remove_nodes(r2, quality, duration, setup_time, demand, setup_cost)
     if not succ:
-        #print "can't remove"
+        #print("can't remove")
         return [p1, p2]
     [succ, _] = o2.remove_nodes(r1, quality, duration, setup_time, demand, setup_cost) 
     if not succ:
-        #print "can't remove"
+        #print("can't remove")
         return [p1, p2]
 
     # insert nodes from r2 into routes of o1 (with best insertion cost)
@@ -71,7 +71,7 @@ def crossover_bcrc(vehicle_candidates, p1, p2, quality, duration,
         del r2_ord[0]
         rec -= 1
         if rec == 0:
-            print "can't insert"
+            print("can't insert")
             return [p1, p2]
 
     # insert nodes from r1 into routes of o2 (with best insertion cost)
@@ -88,10 +88,10 @@ def crossover_bcrc(vehicle_candidates, p1, p2, quality, duration,
         del r1_ord[0]
         rec -= 1
         if rec == 0:
-            print "can't insert"
+            print("can't insert")
             return [p1, p2]
 
-    print "ok"
+    print("ok")
     return [o1, o2]
 
 

@@ -302,7 +302,7 @@ class CBMPopAlgorithm:
         """
         self.population = []
         self.fitness = []
-        print self.problem_params
+        print(self.problem_params)
         no_cycle = 0
         while len(self.population) < self.pop_size:
             self.population.append(
